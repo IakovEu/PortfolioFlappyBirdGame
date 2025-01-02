@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+}
+
+.main {
+    margin: 25px auto;
+    background-color: white;
+    width: 360px;
+    height: 600px;
+    cursor: pointer;
+}
+
+@media(max-width: 500px) {
+    .main {
+        margin: 0 auto;
+    }
+}

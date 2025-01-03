@@ -19,13 +19,17 @@ class Bird extends Field {
         );
     };
     changeY() {
+        let audio = new Audio();
+        audio.src = './AudioForFlappyBirdGame/flap.mp3';
         document.querySelector('#canvas').addEventListener('click', () => {
             this.fall > this.config.flap ? this.fall -= this.config.flap : this.fall = 0;
             this.boostFall = this.config.boostFall;
+            audio.play();
         });
         window.addEventListener('keydown', () => {
             this.fall > this.config.flap ? this.fall -= this.config.flap : this.fall = 0;
             this.boostFall = this.config.boostFall;
+            audio.play();
         });
     };
 }

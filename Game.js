@@ -7,6 +7,8 @@ const field = new Field();
 const bird = new Bird();
 const pipes = new Pipes();
 const config = new Config();
+const audio = new Audio();
+audio.src = './AudioForFlappyBirdGame/start-restart.mp3';
 
 function render() {
     pipes.over = false;
@@ -25,6 +27,7 @@ function render() {
 document.querySelector('.main__score-best').innerHTML = `<div>${localStorage.getItem('key')}</div>`;
 
 document.querySelector('.main__btn-s').addEventListener('click', () => {
+    audio.play();
     if (document.querySelector('.main__score-best').textContent == 'null') {
         localStorage.setItem('key', 0);
         document.querySelector('.main__score-best').innerHTML = `<div>${localStorage.getItem('key')}</div>`;
@@ -36,6 +39,7 @@ document.querySelector('.main__btn-s').addEventListener('click', () => {
 });
 
 document.querySelector('.main__btn-rr').addEventListener('click', () => {
+    audio.play();
     field.index = config.index;
     bird.index = config.index;
     bird.fall = config.fall;
@@ -49,10 +53,6 @@ document.querySelector('.main__btn-rr').addEventListener('click', () => {
     render();
     document.querySelector('.main__btn-r').classList.remove('active');
 });
-
-// console.log(field);
-// console.log(bird);
-// console.log(pipes);
 
 
 

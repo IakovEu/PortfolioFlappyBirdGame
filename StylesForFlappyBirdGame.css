@@ -1,13 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
+
 body {
+    font-family: 'Jersey 15';
+    font-size: 25px;
     background-color: black;
+    user-select: none;
 }
 
 .main {
+    position: relative;
     margin: 25px auto;
     background-color: white;
     width: 360px;
     height: 600px;
     cursor: pointer;
+    background-image: url(ImagesForFlappyBirdGame/bg.jpg);
+}
+
+.main__score {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: -63px;
+}
+
+.main__btn-s,
+.main__btn-r {
+    display: none;
+    position: absolute;
+    text-align: center;
+    top: 170px;
+}
+
+.main__btn-s {
+    margin-left: 135px;
+}
+
+.main__btn-r {
+    margin-left: 30px;
+}
+
+.active {
+    display: block;
+}
+
+.main__btn-r p {
+    font-size: 90px;
+    white-space: nowrap;
+    margin-bottom: 50px;
+}
+
+.main__btn-s button,
+.main__btn-r button {
+    border: 3px solid black;
+    font-family: 'Jersey 15';
+    font-size: 40px;
+    cursor: pointer;
+    background-color: #c5693b;
+    width: 135px;
+    height: 50px;
+}
+
+.main__btn-s button:active,
+.main__btn-r button:active {
+    color: white;
+    font-size: 35px;
 }
 
 @media(max-width: 500px) {

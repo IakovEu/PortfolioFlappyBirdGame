@@ -3,9 +3,9 @@ import Field from "./Field.js";
 class Bird extends Field {
     draw() {
         this.config.src();
-        this.boostFall += this.config.increaseBoostFall;
+        this.boostFall += this.increaseBoostFall;
         this.fall < this.config.bgImg.h2 - this.config.brd.size[3] ? this.fall += this.boostFall : this.over = true;
-        this.index += this.config.increaseIndex;
+        this.index += this.increaseIndex;
         this.canvas.drawImage(
             this.img2,
             this.config.brd.x,

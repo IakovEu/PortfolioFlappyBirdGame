@@ -1,6 +1,6 @@
 class Config {
     index = 0;
-    increaseIndex = 0.3;
+    increaseIndex = 0.3;  // 0.3 \ 0.4 условие на 360 и 357 \ 0.5 условине на 355
     fall = 270;
     boostFall = 1.5;
     increaseBoostFall = 0.07;

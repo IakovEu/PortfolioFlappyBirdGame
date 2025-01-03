@@ -6,16 +6,18 @@ class Field {
     img = this.config.img;
     img2 = this.config.img2;
     index = this.config.index;
+    increaseIndex = this.config.increaseIndex;
     fall = this.config.fall;
     boostFall = this.config.boostFall;
+    increaseBoostFall = this.config.increaseBoostFall;
     arr = this.config.arr;
     over = false;
-    width = this.canvas.canvas.width;    
+    width = this.canvas.canvas.width;
     height = this.canvas.canvas.height;  // просто для удобства, сократить запись в этом и следующих модулях
     draw() {
         this.config.src();
-        this.index += this.config.increaseIndex;
-        const backgroudX = -((this.index * 11) % this.width); 
+        this.index += this.increaseIndex;
+        const backgroudX = -((this.index * 10) % this.width);
         this.canvas.drawImage(
             this.img,
             this.config.bottom.x,

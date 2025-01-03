@@ -16,18 +16,46 @@ function render() {
     pipes.draw();
     pipes.collision();
     const animation = requestAnimationFrame(render);
-    pipes.over ? cancelAnimationFrame(animation) : pipes.over;
+    if (pipes.over) {
+        cancelAnimationFrame(animation)
+        document.querySelector('.main__btn-r').classList.add('active')
+    }
 };
 
-render();
-bird.changeY();
-pipes.changeY();
+document.querySelector('.main__score-best').innerHTML = `<div>${localStorage.getItem('key')}</div>`;
 
-console.log(field);
+document.querySelector('.main__btn-s').addEventListener('click', () => {
+    if (document.querySelector('.main__score-best').textContent == 'null') {
+        localStorage.setItem('key', 0);
+        document.querySelector('.main__score-best').innerHTML = `<div>${localStorage.getItem('key')}</div>`;
+    }
+    render();
+    bird.changeY();
+    pipes.changeY();
+    document.querySelector('.main__btn-s').classList.remove('active');
+});
 
-console.log(bird);
+document.querySelector('.main__btn-rr').addEventListener('click', () => {
+    field.index = config.index;
+    bird.index = config.index;
+    bird.fall = config.fall;
+    bird.flap = config.flap;
+    bird.boostFall = config.boostFall;
+    bird.increaseIndex = config.increaseIndex;
+    pipes.index = config.index;
+    pipes.fall = config.fall;
+    pipes.boostFall = config.boostFall;
+    pipes.increaseIndex = config.increaseIndex;
+    render();
+    document.querySelector('.main__btn-r').classList.remove('active');
+});
 
-console.log(pipes);
+// console.log(field);
+// console.log(bird);
+// console.log(pipes);
+
+
+
 
 
 
